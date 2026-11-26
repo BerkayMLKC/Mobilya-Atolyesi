@@ -40,50 +40,7 @@ Oyun mantığı `index.html` içinde `//#LOGIC` ve `//#END` işaretleri arasınd
 
 `www/index.html` dosyasına çift tıkla.
 
-## Android uygulaması oluşturma
 
-Gerekenler: [Node.js](https://nodejs.org) ve [Android Studio](https://developer.android.com/studio).
-
-```
-npm install @capacitor/core @capacitor/cli @capacitor/android cordova-plugin-purchase
-npx cap add android
-npx cap sync
-npx cap open android
-```
-
-Android Studio açılınca bir emülatörde veya USB ile bağlı telefonda **Run** ile dene. Telefonunda ilk testi yapmak için bu yeterli.
-
-### Google Play için paket (AAB)
-
-1. Android Studio'da **Build → Generate Signed App Bundle / APK → Android App Bundle** seç.
-2. Yeni bir **keystore** oluştur. Bu dosyayı ve parolasını güvenli bir yerde sakla, kaybedersen uygulamayı güncelleyemezsin. Repoya yükleme (`.gitignore` zaten engelliyor).
-3. Çıkan `.aab` dosyasını Play Console'a yükle.
-
-## Google Play'e yükleme
-
-1. [Play Console](https://play.google.com/console) geliştirici hesabı aç (tek seferlik kayıt ücreti ve kimlik doğrulaması var).
-2. Yeni uygulama oluştur, mağaza sayfasını doldur (açıklama, ikon 512×512, ekran görüntüleri, öne çıkan görsel).
-3. İçerik derecelendirmesi ve **Veri güvenliği** formlarını doldur. Oyun veri toplamıyor, bunu belirt.
-4. Çoğu durumda bir gizlilik politikası bağlantısı istenir. Veri toplamadığını söyleyen basit bir sayfa (GitHub Pages ile yapılabilir) yeterlidir.
-5. **Önemli:** Kişisel hesabın 13 Kasım 2023'ten sonra açıldıysa, üretime çıkmadan önce **en az 12 test kullanıcısıyla 14 gün kesintisiz kapalı test** yapman gerekir. Kurumsal hesaplar bundan muaftır. Sonra üretim erişimi için başvurursun.
-
-Kurallar zamanla değişebilir, güncel hâli için [Play Console yardım sayfasına](https://support.google.com/googleplay/android-developer/answer/14151465) bak.
-
-## Uygulama içi satın alma kurulumu
-
-Oyun, Google Play Billing için [`cordova-plugin-purchase`](https://github.com/j3k0/cordova-plugin-purchase) eklentisini kullanır. Ürün kimlikleri koddaki `PACKS` listesindedir ve Play Console'daki kimliklerle **birebir aynı** olmalıdır.
-
-| Ürün kimliği | Verdiği para |
-|---|---|
-| `para_8000` | 8.000 ₺ |
-| `para_20000` | 20.000 ₺ |
-| `para_60000` | 60.000 ₺ |
-
-1. Play Console'da uygulamanı aç, **Monetize → Products → In-app products** bölümüne git (menü adları değişebilir).
-2. Yukarıdaki üç kimlikle üç ürün oluştur, fiyatlarını ve açıklamalarını gir, **Active** yap. Oyun fiyatı mağazadan okuyup gösterir, koda fiyat yazmana gerek yok.
-3. Ödeme alabilmek için Play Console'da **ödeme (merchant) profili** gerekir.
-4. Test için Play Console'da **Settings → License testing** bölümüne test hesaplarını ekle ve uygulamayı USB ile değil, **Play'in test kanalından** yükle. Doğrudan yüklenen uygulamalarda satın alma çoğu zaman çalışmaz.
-5. Mağaza sayfasında uygulama içi satın alma içerdiğini belirt.
 
 Notlar:
 - Tarayıcı sürümünde (GitHub Pages) gerçek ödeme yoktur, paketler "Ücretsiz dene" olarak görünür.
@@ -101,4 +58,4 @@ Notlar:
 
 MIT, bkz. [LICENSE](LICENSE).
 
-> `www/index.html` dosyasını değiştirirsen aynı değişikliği `docs/index.html` içine de kopyala, yoksa yayındaki oyun eski kalır.
+
