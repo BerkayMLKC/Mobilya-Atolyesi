@@ -1,0 +1,16 @@
+{
+  "name": "mobilya-atolyesi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mobilya atölyesi yönetim ve ihale simülasyonu",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^8.6.3",
+    "@capacitor/cli": "^8.6.3",
+    "@capacitor/core": "^8.6.3",
+    "cordova-plugin-purchase": "^13.20.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^4.0.0"
+  }
+}
